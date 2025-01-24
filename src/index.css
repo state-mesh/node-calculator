@@ -1,0 +1,13 @@
+.priceCard .p-card-body {
+    padding: 0;
+}
+
+.p-slider .p-slider-range,
+.p-slider:not(.p-disabled) .p-slider-handle:hover {
+    background: #2c9b27 !important;
+}
+
+.p-slider .p-slider-handle {
+    border: 2px solid #2c9b27 !important;
+}
+

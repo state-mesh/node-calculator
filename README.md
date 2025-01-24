@@ -1,2 +1,3 @@
 # node-calculator
-Node revenue estimation
+Price calculator widget for StateMesh node operators
+
