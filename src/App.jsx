@@ -21,9 +21,9 @@ export default function App() {
 
     const [cpuCount, setCpuCount] = useState(96);
     const [memGb, setMemGb] = useState(256);
-    const [zone, setZone] = useState("eu");
+    const [zone, setZone] = useState("sg");
     const [usage, setUsage] = useState(100);
-    const [nodeCost, setNodeCost] = useState(NODE_COST_EU);
+    const [nodeCost, setNodeCost] = useState(NODE_COST_SG);
 
     let sellPricePerHour = 0;
     switch (zone) {
@@ -48,6 +48,18 @@ export default function App() {
 
             <div className="flex flex-wrap gap-3 mb-5">
                 <div className="flex align-items-center">
+                    <RadioButton inputId="sg" name="sg" value="sg"
+                                 onChange={(e) => {
+                                     setZone(e.value)
+                                     if (e.value === 'eu') {
+                                         setNodeCost(NODE_COST_EU)
+                                     } else {
+                                         setNodeCost(NODE_COST_SG)
+                                     }
+                                 }} checked={zone === 'sg'}/>
+                    <label htmlFor="ingredient2" className="ml-2">Singapore</label>
+                </div>
+                <div className="flex align-items-center">
                     <RadioButton inputId="eu" name="eu" value="eu"
                                  onChange={(e) => {
                                      setZone(e.value)
@@ -58,19 +70,6 @@ export default function App() {
                                      }
                                  }} checked={zone === 'eu'}/>
                     <label htmlFor="ingredient1" className="ml-2">Europe</label>
-                </div>
-                <div className="flex align-items-center">
-                    <RadioButton inputId="sg" name="eu" value="sg"
-                                 onChange={(e) => {
-                                     setZone(e.value)
-                                     setZone(e.value)
-                                     if (e.value === 'eu') {
-                                         setNodeCost(NODE_COST_EU)
-                                     } else {
-                                         setNodeCost(NODE_COST_SG)
-                                     }
-                                 }} checked={zone === 'sg'}/>
-                    <label htmlFor="ingredient2" className="ml-2">Singapore</label>
                 </div>
             </div>
 
